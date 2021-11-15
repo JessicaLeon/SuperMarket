@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6bb5b68-de05-4cb9-9377-84df215202c3" name="Changes" comment="" />
+    <list default="true" id="c397cf8a-3b5f-415a-8353-544338ec92db" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,15 +18,7 @@
       </list>
     </option>
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="ProjectId" id="20wBAHd8x4z6aWv9lVkhQlT2Cbu" />
+  <component name="ProjectId" id="20wAu2nufKMv2VaTl1kCZ03s9Yf" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -59,11 +51,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e6bb5b68-de05-4cb9-9377-84df215202c3" name="Changes" comment="" />
-      <created>1636945625468</created>
+      <changelist id="c397cf8a-3b5f-415a-8353-544338ec92db" name="Changes" comment="" />
+      <created>1636945496155</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1636945625468</updated>
+      <updated>1636945496155</updated>
     </task>
     <servers />
   </component>
