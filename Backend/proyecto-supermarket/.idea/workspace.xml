@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c397cf8a-3b5f-415a-8353-544338ec92db" name="Changes" comment="" />
+    <list default="true" id="c397cf8a-3b5f-415a-8353-544338ec92db" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Frontend/Angular/src/app/Products/edit/edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/Angular/src/app/Products/edit/edit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/Angular/src/app/Products/edit/edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/Angular/src/app/Products/edit/edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/Angular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/Angular/src/app/app.module.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +22,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="20wAu2nufKMv2VaTl1kCZ03s9Yf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
