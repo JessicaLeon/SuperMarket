@@ -20,7 +20,10 @@ export class ListComponent implements OnInit {
   
 
   ngOnInit(): void {
-  this.list();
+    this.productService.updateProduct.subscribe(data =>{
+      this.product = data });
+    this.list();
+
 
   }
 

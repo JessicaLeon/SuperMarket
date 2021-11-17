@@ -1,26 +1,31 @@
 <mat-form-field appearance="fill">
     <mat-label>Nombre</mat-label>
-    <input matInput placeholder="Nombre">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Categoria</mat-label>
-    <mat-select>
-      <mat-option value="one">First option</mat-option>
-      <mat-option value="two">Second option</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Descripción</mat-label>
-    <input matInput placeholder="Descripción">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Cantidad</mat-label>
-    <input matInput placeholder="Cantidad">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Precio Unitario</mat-label>
-    <input matInput placeholder="Precio Unitario">
+    <input matInput placeholder="Nombre"[(ngModel)]="product.name">
   </mat-form-field>
 
-  <button class="btn btn-warning" >Guardar</button>
-  <button class="btn btn-warning" >Cancelar</button>
+  <mat-form-field appearance="fill">
+    <mat-label>{{product.category.name_category}}</mat-label>
+    <mat-select matInput placeholder="seleccione una categoria" [(ngModel)]="product.category">
+      <mat-option *ngFor="let c of category" [value]="c">
+        {{c.name_category}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Descripción</mat-label>
+    <input matInput placeholder="Descripción" [(ngModel)]="product.description">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Cantidad</mat-label>
+    <input matInput placeholder="Cantidad" [(ngModel)]="product.quantify">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Precio Unitario</mat-label>
+    <input matInput placeholder="Precio Unitario"[(ngModel)]="product.unit_price">
+  </mat-form-field>
+
+  <button class="btn btn-warning" (click)="guardar()" >Guardar</button>
+  <button class="btn btn-warning" (click)="cancelar()">Cancelar</button>
