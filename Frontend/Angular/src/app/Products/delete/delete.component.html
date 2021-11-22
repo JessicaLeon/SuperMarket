@@ -1,12 +1,10 @@
-<div class="card">
-    <div class="card-header">
-        Eliminar
-    </div>
-    <div class="card-block">
-        <p class="card-text">
-            ¿Estás seguro que quieres eliminar el producto?
-        </p>
-        <button class="btn btn-danger" style="margin-left: 10px;" (click)="delete_product()">Sí</button>
-        <button class="btn btn-danger" style="margin-left: 10px;" (click)="cancel()">Cancelar</button>
-    </div>
-</div>
+
+<h1 mat-dialog-title>Eliminar producto</h1>
+<div mat-dialog-content>¿Estás seguro de eliminar este producto?</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="delete_product()">Sí</button>
+    <button mat-raised-button color="primary" (click)="cancel()">No</button>
+</div>  
+
+    
+

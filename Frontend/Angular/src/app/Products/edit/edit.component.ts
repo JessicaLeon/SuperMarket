@@ -5,6 +5,8 @@ import { ProductService } from 'src/app/Service/product.service';
 import { Category } from 'src/app/Models/category';
 import { CategoryService } from 'src/app/Service/category.service';
 
+
+
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -24,6 +26,7 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {
     this.edit();
+    
   }
 
   edit():void{
@@ -41,14 +44,21 @@ export class EditComponent implements OnInit {
   }
 
   guardar(){
-    this.ProductService.edit(this.product).subscribe(() =>{
-      return this.ProductService.list().subscribe(data=>{
-        this.ProductService.updateProduct.next(data);
+    if(this.product != null && this.product.id_producto > 0){
+      this.ProductService.edit(this.product).subscribe(() =>{
+        return this.ProductService.list().subscribe(data=>{
+          this.ProductService.updateProduct.next(data);
+          })
+        })
+    }else {
+      this.ProductService.add(this.product).subscribe(() =>{
+        this.ProductService.list().subscribe(data =>{
+          this.ProductService.updateProduct.next(data);
         })
       })
-    this.cancelar();
-  
-  }
+    }
+      this.cancelar();
+    }
 
   cancelar(){
     this.dialogRef.close();
