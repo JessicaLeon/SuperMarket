@@ -1,10 +1,12 @@
-<mat-form-field appearance="fill">
+
+
+<mat-form-field appearance="fill" style="width: 100%;">
     <mat-label>Nombre</mat-label>
     <input matInput placeholder="Nombre"[(ngModel)]="product.name">
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>{{product.category.name_category}}</mat-label>
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label *ngIf="product.category">{{product.category.name_category}}</mat-label>
     <mat-select matInput placeholder="seleccione una categoria" [(ngModel)]="product.category">
       <mat-option *ngFor="let c of category" [value]="c">
         {{c.name_category}}
@@ -12,20 +14,24 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" style="width: 100%;">
     <mat-label>Descripción</mat-label>
     <input matInput placeholder="Descripción" [(ngModel)]="product.description">
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" style="width: 100%;">
     <mat-label>Cantidad</mat-label>
-    <input matInput placeholder="Cantidad" [(ngModel)]="product.quantify">
+    <input matInput type="number" placeholder="Cantidad" [(ngModel)]="product.quantify">
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" style="width: 100%;">
     <mat-label>Precio Unitario</mat-label>
-    <input matInput placeholder="Precio Unitario"[(ngModel)]="product.unit_price">
+    <input matInput type="number" placeholder="Precio Unitario"[(ngModel)]="product.unit_price">
+    <span matPrefix>$&nbsp;</span>
+    <span matSuffix>.00</span>
   </mat-form-field>
 
-  <button class="btn btn-warning" (click)="guardar()" >Guardar</button>
-  <button class="btn btn-warning" (click)="cancelar()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="guardar()" style="margin-left: 130px;">Guardar</button>
+  <button mat-raised-button color="warn" (click)="cancelar()" style="margin-left:10px;">Cancelar</button>
+  
+  

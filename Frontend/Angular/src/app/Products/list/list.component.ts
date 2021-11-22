@@ -1,9 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { AbstractType, Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from 'src/app/Service/product.service';
 import { Product } from 'src/app/Models/product';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteComponent } from '../delete/delete.component';
 import { EditComponent } from '../edit/edit.component';
+import { ExcelService } from 'src/app/Service/excel.service';
+import { MatTableDataSource } from '@angular/material/table';
+import { Category } from 'src/app/Models/category';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-list',
@@ -13,25 +18,43 @@ import { EditComponent } from '../edit/edit.component';
 export class ListComponent implements OnInit {
 
   product: Product[];
+  displayedColumns = ['id_producto', 'name', 'category', 'description', 'quantify', 'unit_price', 'edit-delete'];
+  dataSource: MatTableDataSource<Product>
+  @ViewChild(MatPaginator)paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(
     private dialog:MatDialog,
-    private productService: ProductService){}
+    private productService: ProductService,
+    private excelService: ExcelService){}
   
 
-  ngOnInit(): void {
-    this.productService.updateProduct.subscribe(data =>{
-      this.product = data });
+  ngOnInit(): void {  
+    this.update();
     this.list();
 
 
+
+  }
+
+  private update(){
+    this.productService.updateProduct.subscribe(data =>{
+      this.dataSource = new MatTableDataSource(data); 
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
+      
   }
 
   private list(){
-    this.productService.list().subscribe(data => {this.product = data});
-  }
+    this.productService.list().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+  });
+}
 
-  open_dialog_delete(id: number){
+ open_dialog_delete(id: number){
     let dialogRef = this.dialog.open(DeleteComponent, {
       disableClose:true
     });
@@ -39,22 +62,27 @@ export class ListComponent implements OnInit {
       if(status){
         this.productService.delete(id).subscribe(()=>{
           this.productService.list().subscribe(data =>{
-            this.product = data;
+            this.dataSource = new MatTableDataSource(data);
           })
         })
       }
     })
   }
 
-  open_edit(product: Product){
+
+  open_edit(product?: Product){
+    let produc = product != null ? product: new Product(0, "", new Category(0, ""), "", 0, 0);
     this.dialog.open(EditComponent, {
-      width: '260px',
-      data: product
+     width: '360px',
+     data: product
     })
   }
 
-  add(){
-
+  filter(event: Event){
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  
 
 }
