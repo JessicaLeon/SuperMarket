@@ -4,6 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListComponent } from './Products/list/list.component';
 import { EditComponent } from './Products/edit/edit.component';
+import { CreateComponent } from './Users/Create/create.component';
+import { ListUserComponent } from './Users/List/list.component';
+import { EditUserComponent } from './Users/Edit/edit.component';
 import { DeleteComponent } from './Products/delete/delete.component';
 import { AddComponent } from './Products/add/add.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,7 +23,10 @@ import {MatInputModule} from '@angular/material/input';
     ListComponent,
     EditComponent,
     DeleteComponent,
-    AddComponent
+    AddComponent,
+    EditUserComponent,
+    ListUserComponent,
+    CreateComponent
 
   ],
   imports: [

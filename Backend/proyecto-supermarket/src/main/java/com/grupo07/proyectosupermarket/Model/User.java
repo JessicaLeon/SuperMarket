@@ -34,7 +34,7 @@ public class User {
     @Column(name="role", length = 20, nullable = false)
     private String role_user;
    
-    @Column(name="creation_day", nullable = false)
+    @Column(name="creation_day", nullable = true)
     private Date date_user;
     
     public Integer getId_user() {
