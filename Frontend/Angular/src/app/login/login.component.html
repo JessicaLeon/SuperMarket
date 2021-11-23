@@ -1,0 +1,22 @@
+<div class="body">
+    
+    <div class="login" style="padding: 3px 10px; border:powderblue 5px solid; border-radius: 20px; border: white 1px solid; background-color: white; opacity: 0.5;">
+      <form [formGroup]="form" (ngSubmit)="ingresar()">
+        <img src="../../assets/img/user6.png" width="30%" style="margin-top: 50px;">
+        <h1>SuperMarket</h1>
+        <mat-form-field class="ancho" appearance="fill">
+            <mat-label>Usuario</mat-label>
+            <input type="text" matInput autocomplete="off" formControlName="user">
+          </mat-form-field>
+          <mat-form-field class="ancho" appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input type="password" matInput autocomplete="off" formControlName="password">
+          </mat-form-field>
+          <br>
+            <button *ngIf="!loading" type="submit" class="ancho button" mat-button [disabled]="form.invalid" style="background-color: #005074; color:white;">Ingresar</button>
+            <mat-spinner *ngIf="loading" class="spinner" diameter="50"></mat-spinner>
+          </form>
+    </div>      
+</div>
+
+
