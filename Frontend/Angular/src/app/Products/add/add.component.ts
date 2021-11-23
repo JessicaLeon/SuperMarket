@@ -1,12 +1,12 @@
 import { Component, Inject, OnInit} from '@angular/core';
-import { Router } from '@angular/router';
+
 import { Category } from 'src/app/Models/category';
 import { Product } from 'src/app/Models/product';
 import { CategoryService } from 'src/app/Service/category.service';
 import { ProductService } from 'src/app/Service/product.service';
-import * as $ from 'jquery';
+
 import { FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 
@@ -25,11 +25,10 @@ export class AddComponent implements OnInit {
 
   constructor(
    private productService:ProductService,
-   private router:Router,
+   private dialogRef: MatDialogRef<AddComponent>, 
    private categoryService: CategoryService,
-  
-     
-  ) { }
+   @Inject(MAT_DIALOG_DATA) private data: Product){}
+
 
   ngOnInit(): void {
     this.categoryService.list().subscribe(data => {
@@ -37,12 +36,10 @@ export class AddComponent implements OnInit {
     });
     
 
-    
   }
 
 
   create():void{
-    console.log(this.product);
     this.productService.add(this.product).subscribe(() =>{
     return this.productService.list().subscribe(data=>{
     this.productService.updateProduct.next(data);
@@ -52,7 +49,7 @@ export class AddComponent implements OnInit {
   }
 
   cancelar(){
-    
+    this.dialogRef.close();
   }
 
 }

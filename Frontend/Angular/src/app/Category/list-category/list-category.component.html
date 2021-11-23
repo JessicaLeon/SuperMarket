@@ -3,8 +3,15 @@
     <app-navbar></app-navbar>
 
     <div style="flex: auto; width: 100%;">
-      <button mat-raised-button color="primary" style="margin-left: 130px;" (click)="open_edit_cat()">Agregar categoria</button>
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="margin-top: 100px; opacity: 0.5; justify-content: center; align-items: center; width: 100%;">
+
+      <mat-card style="margin-top: 90px; opacity: 0.5; background-color: transparent; text-align: center; font-size: 40px;">CATEGORIAS</mat-card>
+      <mat-form-field style="margin-top:20px; width: 50%; margin-left: 15px;">
+        <input matInput (keyup)="filter($event)" placeholder="Buscar categoría">
+      </mat-form-field>
+       <button mat-raised-button color="primary" style="margin-top: 20px; margin-left: 290px;" (click)="exporter.exportTable('xlsx', {fileName: 'categorias_SM'})"> Exportar Excel</button>
+      <button mat-raised-button color="primary" style= "margin-left: 15px;" >Agregar categoría</button>
+      
+      <table mat-table [dataSource]="dataSource" matTableExporter  #exporter="matTableExporter" class="mat-elevation-z8" style="margin-top: 10px; opacity: 0.5; justify-content: center; align-items: center; width: 100%;">
       
         <!-- Position Column -->
         <ng-container matColumnDef="id_category">
@@ -33,9 +40,14 @@
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      
-       
+    
       </table>
+      <mat-paginator [length]="100"
+              [pageSize]="5"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page"
+              style="opacity: 0.5; background-color: transparent;">
+      </mat-paginator>
   
       
      </div> 

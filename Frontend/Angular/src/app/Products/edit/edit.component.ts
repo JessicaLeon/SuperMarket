@@ -44,21 +44,14 @@ export class EditComponent implements OnInit {
   }
 
   guardar(){
-    if(this.product != null && this.product.id_producto > 0){
-      this.ProductService.edit(this.product).subscribe(() =>{
-        return this.ProductService.list().subscribe(data=>{
-          this.ProductService.updateProduct.next(data);
-          })
-        })
-    }else {
       this.ProductService.add(this.product).subscribe(() =>{
-        this.ProductService.list().subscribe(data =>{
+        return this.ProductService.list().subscribe(data =>{
           this.ProductService.updateProduct.next(data);
         })
       })
-    }
       this.cancelar();
     }
+      
 
   cancelar(){
     this.dialogRef.close();

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Product } from 'src/app/Models/product';
 import { MatTableDataSource } from '@angular/material/table';
 import { CategoryService } from 'src/app/Service/category.service';
@@ -6,7 +6,7 @@ import { Category } from 'src/app/Models/category';
 import { DeleteCategoryComponent } from '../delete-category/delete-category.component';
 import { MatDialog } from '@angular/material/dialog';
 import { EditCategoryComponent } from 'src/app/edit-category/edit-category.component';
-
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-list-category',
@@ -18,14 +18,17 @@ export class ListCategoryComponent implements OnInit {
   category: Category[];
   displayedColumns = ['id_category', 'name_category', 'edit-delete'];
   dataSource: MatTableDataSource<Category>
+  @ViewChild(MatPaginator)paginator: MatPaginator;
 
   constructor(private categoryService: CategoryService,
     private dialog:MatDialog,
+    
     ) { }
 
   ngOnInit(): void {
     this.categoryService.updateCategory.subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     })
     this.list();
   }
@@ -33,6 +36,7 @@ export class ListCategoryComponent implements OnInit {
   private list(){
     this.categoryService.list().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
   });
 }
 
@@ -58,6 +62,11 @@ open_edit_cat(category?: Category){
    data: category
   })
 
+}
+
+filter(event: Event){
+  const filterValue = (event.target as HTMLInputElement).value;
+  this.dataSource.filter = filterValue.trim().toLowerCase();
 }
 
 

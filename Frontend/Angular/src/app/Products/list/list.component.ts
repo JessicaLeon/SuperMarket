@@ -9,6 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Category } from 'src/app/Models/category';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { AddComponent } from '../add/add.component';
 
 @Component({
   selector: 'app-list',
@@ -70,11 +71,16 @@ export class ListComponent implements OnInit {
   }
 
 
-  open_edit(product?: Product){
-    let produc = product != null ? product: new Product(0, "", new Category(0, ""), "", 0, 0);
+  open_edit(product: Product){
     this.dialog.open(EditComponent, {
      width: '360px',
      data: product
+    })
+  }
+
+  open_add(){
+    this.dialog.open(AddComponent, {
+      width: '500px'
     })
   }
 

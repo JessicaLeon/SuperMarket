@@ -4,15 +4,16 @@
   <app-navbar></app-navbar>
 
     <div style="flex: auto; width: 100%;">
-      <button mat-raised-button color="primary" (click)="open_edit()" >Agregar producto</button>
-      <br>
-      <button mat-raised-button color="primary" style="margin-top: 50px;" (click)="exporter.exportTable('xlsx', {fileName: 'productos_SM'})">Excel</button>
-     
 
+      <mat-card style="margin-top: 90px; opacity: 0.5; background-color: transparent; text-align: center; font-size: 40px;">PRODUCTOS</mat-card>
       
-      <mat-form-field style="margin-top:20px; width: 100%;">
+      <mat-form-field style="margin-top:20px; width: 50%; margin-left: 15px;">
         <input matInput (keyup)="filter($event)" placeholder="Buscar producto">
       </mat-form-field>
+      <button mat-raised-button color="primary" style="margin-top: 20px; margin-left: 290px;" (click)="exporter.exportTable('xlsx', {fileName: 'productos_SM'})"> Exportar Excel</button>
+      <button mat-raised-button color="primary" style= "margin-left: 15px;" (click)="open_add()" >Agregar producto</button>
+      
+      
 
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matTableExporter  #exporter="matTableExporter"  matSort style="margin-top: 10px; opacity: 0.5; justify-content: center; align-items: center;">
         
