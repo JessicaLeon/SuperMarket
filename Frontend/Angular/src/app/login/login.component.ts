@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/Service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +14,13 @@ export class LoginComponent implements OnInit {
   form: FormGroup
   loading = false;
 
-  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar, private router: Router) { 
-    this.form = this.fb.group({
+  constructor(
+    private loginService: LoginService ,
+    private fb: FormBuilder,
+    private _snackBar: MatSnackBar,
+    private router: Router
+  ) {
+      this.form = this.fb.group({
       user: ['', Validators.required],
       password: ['', Validators.required]
     })
@@ -27,15 +33,16 @@ export class LoginComponent implements OnInit {
     const user = this.form.value.user;
     const password =this.form.value.password;
 
-  //Validar sin Backend
-  if(user == 'Jessica' && password == 'admin'){
-    //Redireccion al home
-    this.cloading();
-  } else{
-    //Mensaje de error
-    this.error();
-    this.form.reset();
-  } 
+    this.loginService.login( user , password ).subscribe(data => {
+      if( data.user === null ){
+        this.error();
+        this.form.reset();
+      } else {
+        alert('Welcome ' + data.user.name_user );
+        localStorage.setItem('loggeduser', JSON.stringify(data));
+        this.cloading();
+      }
+    });
 }
 
 error(){
@@ -46,13 +53,18 @@ error(){
   })
 }
 
+reset() {
+    this.router.navigate(['/reset']);
+}
+
 cloading(){
   this.loading = true;
-  
+
   setTimeout(() => {
     this.router.navigate(['home']);
-  }, 1500); 
-  
+  }, 1500);
+
 }
+
 }
 

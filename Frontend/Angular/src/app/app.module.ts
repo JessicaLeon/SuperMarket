@@ -19,6 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatSliderModule } from '@angular/material/slider';
 import { LoginComponent } from './login/login.component';
+import { ResetComponent } from "./NewPass/newpass.component";
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -53,8 +54,13 @@ import {MatSortModule} from '@angular/material/sort';
     HomeComponent,
     NavbarComponent,
     ListUserComponent,
+<<<<<<< Updated upstream
     ListCategoryComponent
 
+=======
+    ListCategoryComponent,
+    ResetComponent
+>>>>>>> Stashed changes
 
   ],
   imports: [
@@ -83,14 +89,14 @@ import {MatSortModule} from '@angular/material/sort';
     MatTableExporterModule,
     MatPaginatorModule,
     MatSortModule
-    
-   
+
+
 
   ],
   providers: [],
 
   bootstrap: [AppComponent],
-  
-  
+
+
 })
 export class AppModule { }
