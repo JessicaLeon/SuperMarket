@@ -4,6 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListComponent } from './Products/list/list.component';
 import { EditComponent } from './Products/edit/edit.component';
+import { CreateComponent } from './Users/Create/create.component';
+import { ListUserComponent } from './Users/List/list.component';
+import { EditUserComponent } from './Users/Edit/edit.component';
 import { DeleteComponent } from './Products/delete/delete.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -24,7 +27,6 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import { ListUserComponent } from './User/list-user/list-user.component';
 import { ListCategoryComponent } from './Category/list-category/list-category.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
@@ -43,11 +45,16 @@ import {MatSortModule} from '@angular/material/sort';
     ListComponent,
     EditComponent,
     DeleteComponent,
+
+    AddComponent,
+    EditUserComponent,
+    CreateComponent,
     LoginComponent,
     HomeComponent,
     NavbarComponent,
     ListUserComponent,
-    ListCategoryComponent,
+    ListCategoryComponent
+
 
   ],
   imports: [
