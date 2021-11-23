@@ -10,7 +10,7 @@ import { ListUserComponent } from './Users/List/list.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component:HomeComponent},
   {path: 'productos', component:ListComponent},
   {path: 'login', component:LoginComponent},
