@@ -35,6 +35,8 @@ import { AddComponent } from './Products/add/add.component';
 import { MatTableExporterModule } from 'mat-table-exporter';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import { DeleteCategoryComponent } from './Category/delete-category/delete-category.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
 
 
 
@@ -53,8 +55,9 @@ import {MatSortModule} from '@angular/material/sort';
     HomeComponent,
     NavbarComponent,
     ListUserComponent,
-    ListCategoryComponent
-
+    ListCategoryComponent,
+    DeleteCategoryComponent,
+    EditCategoryComponent,
 
   ],
   imports: [

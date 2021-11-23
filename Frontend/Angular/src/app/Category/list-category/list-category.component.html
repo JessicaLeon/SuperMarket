@@ -3,7 +3,8 @@
     <app-navbar></app-navbar>
 
     <div style="flex: auto; width: 100%;">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="margin-top: 200px; opacity: 0.5; justify-content: center; align-items: center; width: 100%;">
+      <button mat-raised-button color="primary" style="margin-left: 130px;" (click)="open_edit_cat()">Agregar categoria</button>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="margin-top: 100px; opacity: 0.5; justify-content: center; align-items: center; width: 100%;">
       
         <!-- Position Column -->
         <ng-container matColumnDef="id_category">
@@ -21,10 +22,10 @@
           <ng-container matColumnDef="edit-delete">
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let row">
-                <button mat-icon-button color="primary"  aria-label="Example icon button with a home icon">
+                <button mat-icon-button color="primary"  aria-label="Example icon button with a home icon" (click)="open_edit_cat(row)">
                     <mat-icon>edit</mat-icon>
                   </button>
-                  <button mat-icon-button color="warn"  aria-label="Example icon button with a home icon">
+                  <button mat-icon-button color="warn"  aria-label="Example icon button with a home icon" (click)="open_dialog_delete_cat(row.id_category)">
                     <mat-icon>delete</mat-icon>
                   </button>
             </td>
