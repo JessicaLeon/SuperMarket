@@ -1,11 +1,189 @@
 
 <div class="body">
+   
+        <app-navbar>        
+        </app-navbar>
 
-        <app-navbar></app-navbar>
-
-
-</div>
-
+        <div class="container">
+            <div class="title my-5">
+                <h1>Java Web Developer - Final Project</h1>
+                <hr>
+            </div>
+       
+    
+            <div class="row justify-content-start">
+                <div class="col-15">
+                    <ul>
+                        <li class="mt-3">
+                            <p><strong>Nombre del Proyecto:</strong> Java Web Developer.</p> 
+                        </li>
+                        <li class="mt-4">
+                            <p><strong>Nombre del Equipo:</strong> Internacional Developers (G-7)</p> 
+                        </li>
+                        <li class="mt-4">
+                            <p><strong>Integrantes del Equipo:</strong></p>
+    
+                            <table class="table caption-top" style="line-height: 35px;">
+                              <thead class="table-dark">
+                                <tr>
+                                  <th scope="col">Nº</th>
+                                  <th scope="col">Nombre</th>
+                                  <th scope="col">Apellido</th>
+                                  <th scope="col">Nacionalidad</th>
+                                  <th scope="col"></th>
+                                  <th scope="col">GitHub</th>
+                                </tr>
+                              </thead>
+    
+                              <tbody>
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td>Jessica Dennise</td>
+                                  <td>Leon Flores</td>
+                                  <td>Mexico</td>
+                                  <td>
+                                    <img 
+                                      src="https://st.depositphotos.com/2274151/2437/i/600/depositphotos_24376265-stock-photo-mexico-flag-button.jpg"
+                                      alt="Bandera de Mexico"
+                                      width="40"
+                                      style="border-radius: 50px;">
+                                  </td>
+                                  <td>
+                                      <a href="https://github.com/JessicaLeon">JessicaLeon</a>
+                                  </td>
+                                </tr>
+    
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>Andrea Lilibeth </td>
+                                  <td>Paredes Morales</td>
+                                  <td>Peru</td>
+                                  <td>
+                                    <img 
+                                    src="https://www.vhv.rs/dpng/d/462-4621616_icon-bandera-peru-png-transparent-png.png"
+                                    alt="Bandera de Peru"
+                                    width="40"
+                                    style="border-radius: 50px;">
+                                  </td>
+                                  <td>
+                                      <a href="https://github.com/Sparx5" target="_blank">Sparx5</a>
+                                  </td>
+                                </tr>
+    
+                                <tr>
+                                  <th scope="row">3</th>
+                                  <td>Nicole Maria</td>
+                                  <td>Reggiardo</td>
+                                  <td>Argentina</td>
+                                  <td>
+                                    <img 
+                                    src="https://st3.depositphotos.com/29384342/35237/v/450/depositphotos_352374422-stock-illustration-flag-argentina-glossy-icon-button.jpg"
+                                    alt="Bandera de Argentina"
+                                    width="50"
+                                    style="border-radius: 50px; margin-left: -2px;">
+                                  </td>
+                                  <td>
+                                      <a href="https://github.com/Nikitarr" target="_blank">Nikitarr</a>
+                                  </td>
+                                </tr>
+    
+                                <tr>
+                                  <th scope="row">4</th>
+                                  <td>Wendy Azucena</td>
+                                  <td>Solorzano Hernandez</td>
+                                  <td>Mexico/El Salvador</td>
+                                  <td>
+                                    <img 
+                                    src="https://st.depositphotos.com/2274151/2437/i/600/depositphotos_24376265-stock-photo-mexico-flag-button.jpg"
+                                    alt="Bandera de Mexico"
+                                    width="40"
+                                    style="border-radius: 50px; margin-left: 4px;">
+    
+                                    <img 
+                                    src="https://thumbs.dreamstime.com/b/icono-redondo-del-vector-de-la-bandera-el-salvador-109322437.jpg"
+                                    alt="Bandera de El Salvador"
+                                    width="45"
+                                    style="border-radius: 50px; margin-left: 4px;">
+                                  </td>
+                                  <td>
+                                      <a href="https://github.com/WenHernandez" target="_blank">WenHernandez</a>
+                                  </td>
+                                </tr>
+                                
+                              </tbody>
+                            </table>
+                        </li>
+    
+                        <li class="mt-5">
+                          <p>
+                            <strong>Stack de tecnologia</strong>
+                            <div class="container-icons">
+                              <div class="row" style="text-align: center;">
+                                <div class="col-6 col-sm-3">
+                                  Control de versiones <br>
+                                  <img 
+                                    src="https://cdn-icons-png.flaticon.com/512/25/25231.png" 
+                                    alt="GitHub"
+                                    width="50"
+                                    class="mt-3"
+                                    style="border-radius: 50px;"
+                                  >
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                  Frontend <br>
+                                  <div class="mt-3">
+                                      <img 
+                                        src="data:image/png;base64,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" 
+                                        alt="GitHub"
+                                        width="50"
+                                      >
+                                      <img 
+                                        src="data:image/png;base64,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" 
+                                        alt="Bootstrap"
+                                        width="50"
+                                        style="border-radius: 50px;"
+                                      >
+                                  </div>
+    
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                  Backend <br>
+                                  <img 
+                                    src="data:image/png;base64,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"
+                                    alt="Java"
+                                    width="50"
+                                    class="mt-3"
+                                    style="border-radius: 10px;"
+                                  >
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                  Gestor de Base de Datos <br>
+                                  <img 
+                                    src="http://pngimg.com/uploads/mysql/mysql_PNG23.png"
+                                    alt="MySQL"
+                                    width="50"
+                                    class="mt-3"
+                                  >
+                                </div>
+                              
+                            </div>
+                          </p>
+                        </li>
+    
+                        <li class="mt-5">
+                          <p>
+                            <strong>URL al Proyecto en GitHub: </strong>
+                            <a href="https://github.com/JessicaLeon/SuperMarket" target="_blank">SuperMarket</a>
+                          </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+        </div>
+        
+    </div>
+  
 
 
 
