@@ -49,7 +49,7 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     HomeComponent,
     NavbarComponent,
     ListUserComponent,
-    ListCategoryComponent,
+    
     
 
   ],
