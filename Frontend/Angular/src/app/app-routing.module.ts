@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { Category } from './Models/category';
 import { ListCategoryComponent } from './Category/list-category/list-category.component';
-import { ListUserComponent } from './User/list-user/list-user.component';
+import { ListUserComponent } from './Users/List/list.component';
 
 
 const routes: Routes = [
