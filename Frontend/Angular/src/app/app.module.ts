@@ -50,8 +50,7 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     NavbarComponent,
     ListUserComponent,
     ListCategoryComponent,
-    DeleteCategoryComponent,
-    EditCategoryComponent,
+    
 
   ],
   imports: [
