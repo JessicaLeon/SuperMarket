@@ -19,6 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatSliderModule } from '@angular/material/slider';
 import { LoginComponent } from './login/login.component';
+import { ResetComponent } from "./NewPass/newpass.component";
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -47,7 +48,6 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     ListComponent,
     EditComponent,
     DeleteComponent,
-
     AddComponent,
     EditUserComponent,
     CreateComponent,
@@ -58,7 +58,8 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     ListCategoryComponent,
     DeleteCategoryComponent,
     EditCategoryComponent
-    
+
+
 
   ],
   imports: [
@@ -87,14 +88,14 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     MatTableExporterModule,
     MatPaginatorModule,
     MatSortModule
-    
-   
+
+
 
   ],
   providers: [],
 
   bootstrap: [AppComponent],
-  
-  
+
+
 })
 export class AppModule { }
