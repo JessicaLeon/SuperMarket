@@ -1,0 +1,9 @@
+diff a/Frontend/Angular/src/app/app.module.ts b/Frontend/Angular/src/app/app.module.ts	(rejected hunks)
+@@ -55,6 +55,7 @@
+     HomeComponent,
+     NavbarComponent,
+     ListUserComponent,
++<<<<<<< HEAD
+     ListCategoryComponent,
+     DeleteCategoryComponent,
+     EditCategoryComponent
