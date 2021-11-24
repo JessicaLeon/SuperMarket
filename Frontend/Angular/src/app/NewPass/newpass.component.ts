@@ -22,7 +22,8 @@ export class ResetComponent implements OnInit {
   ) {
     this.form = this.fb.group({
       user: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      passwordagain: ['', Validators.required]
     })
   }
 
@@ -33,9 +34,14 @@ export class ResetComponent implements OnInit {
     const user = this.form.value.user;
     const password =this.form.value.password;
     const passwordagain = this.form.value.passwordagain;
-
+    console.log( user );
+    console.log( password );
+    console.log( passwordagain );
     this.loginService.resetpass( user , password , passwordagain  ).subscribe(data => {
-        localStorage.setItem('loggeduser', JSON.stringify(data));
+        if(data.message !== 'OK'){
+           alert(data.message);
+        }
+        localStorage.setItem('loggeduser', "" );
         this.cloading();
     });
   }
@@ -58,5 +64,3 @@ export class ResetComponent implements OnInit {
   }
 
 }
-
-

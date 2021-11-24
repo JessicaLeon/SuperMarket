@@ -53,15 +53,19 @@ public class LoginController {
 
     @PutMapping()
     @ResponseBody
-    public ResponseEntity<ResetResponse> login( @RequestBody ResetParams params  ){
+    public ResponseEntity<ResetResponse> reset( @RequestBody ResetParams params  ){
         
         ResetResponse response = new ResetResponse();
         if( params.password.equals( params.passwordagain ) ){ 
-            service.Reset(params.name, params.password);
-            response.message = "PASSWORD SUCCESFULLY CHANGED";
+            if( service.Reset(params.name, params.password) ){
+                response.message = "OK";
+            }
+            else{
+                response.message = "USUARIO NO ENCONTRADO";
+            }
         }
         else{
-            response.message = "PASSWORD DO NOT MATCH";
+            response.message = "PASSWORD DO NOT MATCH" ;
         }
 
         return new ResponseEntity<ResetResponse>(response  , HttpStatus.OK);

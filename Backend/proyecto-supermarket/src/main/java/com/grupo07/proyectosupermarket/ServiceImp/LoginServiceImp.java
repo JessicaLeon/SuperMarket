@@ -3,6 +3,7 @@ package com.grupo07.proyectosupermarket.ServiceImp;
 import com.grupo07.proyectosupermarket.Encoder;
 import com.grupo07.proyectosupermarket.Model.User;
 import com.grupo07.proyectosupermarket.Repository.InterfaceLoginRep;
+import com.grupo07.proyectosupermarket.Repository.InterfaceUserRep;
 import com.grupo07.proyectosupermarket.Service.InterfaceLoginSer;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,6 @@ public class LoginServiceImp implements InterfaceLoginSer {
     
     @Autowired
     InterfaceLoginRep repository;
-    
 
     @Override
     public User Login( String name , String password ){
@@ -35,14 +35,24 @@ public class LoginServiceImp implements InterfaceLoginSer {
     }
 
     @Override
-    public void Reset( String name , String password ){
+    public Boolean Reset( String name , String password ){
         User user = repository.findByName(name);
 
-        Encoder encoder = new Encoder();        
+        if(  user == null ){
 
-        String passencriptado = encoder.passwordEncoder().encode( password );
-        user.setPass_user( passencriptado );
-        repository.save( user );
+            return false;
+        } else {
+            Encoder encoder = new Encoder();        
+
+            String passencriptado = encoder.passwordEncoder().encode( password );
+            user.setPass_user( passencriptado );
+            
+            System.out.println(passencriptado);
+
+            repository.save(user);
+            return true;
+        }
+
     }
 
     @Override

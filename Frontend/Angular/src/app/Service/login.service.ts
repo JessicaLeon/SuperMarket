@@ -21,7 +21,7 @@ export class LoginService {
 
 
   resetpass(username: string , password : string , passwordagain : string ):Observable<ResetResult>{
-    return this.http.put<ResetResult>(`${this.url}` , { name : username , password: password  , passwordagain: passwordagain });
+    return this.http.put<ResetResult>(`${this.url }` , { name : username , password: password  , passwordagain: passwordagain });
   }
 
   getLoggedUser():User | undefined {
