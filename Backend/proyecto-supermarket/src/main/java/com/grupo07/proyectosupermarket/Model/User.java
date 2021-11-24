@@ -18,13 +18,13 @@ public class User {
 
     @Column(name="username", length = 20, nullable = false)
     private String user_name;
-    
-    @Column(name="password", length = 20, nullable = false)
+
+    @Column(name="password", length = 256, nullable = false)
     private String pass_user;
-    
+
     @Column(name="email", length = 20, nullable = true)
     private String email_user;
-    
+
     @Column(name="name", length = 20, nullable = true)
     private String name_user;
 
@@ -33,10 +33,10 @@ public class User {
 
     @Column(name="role", length = 20, nullable = false)
     private String role_user;
-   
-    @Column(name="creation_day", nullable = true)
+
+    @Column(name="creation_day", nullable = false)
     private Date date_user;
-    
+
     public Integer getId_user() {
         return id_user;
     }
@@ -101,4 +101,3 @@ public class User {
 		this.date_user = date_user;
 	}
 }
-

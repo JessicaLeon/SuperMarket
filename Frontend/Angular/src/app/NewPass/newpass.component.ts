@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 import { LoginService } from 'src/app/Service/login.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-newpass',
+  templateUrl: './newpass.component.html',
+  styleUrls: ['./newpass.component.css']
 })
-export class LoginComponent implements OnInit {
+export class ResetComponent implements OnInit {
 
   form: FormGroup
   loading = false;
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private router: Router
   ) {
-      this.form = this.fb.group({
+    this.form = this.fb.group({
       user: ['', Validators.required],
       password: ['', Validators.required]
     })
@@ -29,42 +29,34 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ingresar(){
+  resetpass(){
     const user = this.form.value.user;
     const password =this.form.value.password;
+    const passwordagain = this.form.value.passwordagain;
 
-    this.loginService.login( user , password ).subscribe(data => {
-      if( data.user === null ){
-        this.error();
-        this.form.reset();
-      } else {
-        alert('Welcome ' + data.user.name_user );
+    this.loginService.resetpass( user , password , passwordagain  ).subscribe(data => {
         localStorage.setItem('loggeduser', JSON.stringify(data));
         this.cloading();
-      }
     });
-}
+  }
 
-error(){
-  this._snackBar.open('Usuario o Contraseña incorrecta', '', {
-    duration: 5000,
-    horizontalPosition: 'center',
-    verticalPosition: 'bottom'
-  })
-}
+  error(){
+    this._snackBar.open('Usuario o Contraseña incorrecta', '', {
+      duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    })
+  }
 
-reset() {
-    this.router.navigate(['/reset']);
-}
+  cloading(){
+    this.loading = true;
 
-cloading(){
-  this.loading = true;
+    setTimeout(() => {
+      this.router.navigate(['login']);
+    }, 1500);
 
-  setTimeout(() => {
-    this.router.navigate(['home']);
-  }, 1500);
+  }
 
 }
 
-}
 
