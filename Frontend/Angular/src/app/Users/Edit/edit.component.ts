@@ -22,6 +22,8 @@ export class EditUserComponent implements OnInit {
     this.edit();
   }
 
+
+
   edit():void{
     this.user = new Users();
     this.user.id_user=this.data.id_user;

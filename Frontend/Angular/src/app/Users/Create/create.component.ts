@@ -10,6 +10,7 @@ import { Users } from 'src/app/Models/users';
 })
 export class CreateComponent implements OnInit {
   
+
   user: Users;
 
   constructor(
