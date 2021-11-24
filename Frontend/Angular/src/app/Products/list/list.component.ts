@@ -45,6 +45,7 @@ export class ListComponent implements OnInit {
 
     this.update();
     this.list();
+    
   }
 
   private update(){

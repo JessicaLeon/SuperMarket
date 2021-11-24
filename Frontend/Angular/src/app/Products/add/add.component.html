@@ -30,6 +30,11 @@
   <span matSuffix>.00</span>
 </mat-form-field>
 
-<button mat-raised-button color="primary" (click)="create()" style="margin-left: 130px;">Guardar</button>
+
+  <mat-label><h3>Selecciona una imagen</h3></mat-label>
+  <input type="file" accept="image/png,image/jpeg" placeholder="Ex. Pizza" value="Sushi">
+  
+
+<button mat-raised-button color="primary" (click)="create()" style="margin-left: 130px; margin-top: 15px;">Guardar</button>
 <button mat-raised-button color="warn" (click)="cancelar()" style="margin-left:10px;">Cancelar</button>
 

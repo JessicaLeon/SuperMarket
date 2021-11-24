@@ -26,6 +26,9 @@ public class Producto {
     @Column(name="unit_price")
     private float unit_price;
 
+    @Column(name="image")
+    private String image;
+
     public Integer getId_producto() {
         return id_producto;
     }
@@ -73,4 +76,8 @@ public class Producto {
     public void setUnit_price(float unit_price) {
         this.unit_price = unit_price;
     }
+
+    public String getImage() { return image; }
+
+    public void setImage(String image) { this.image = image; }
 }
