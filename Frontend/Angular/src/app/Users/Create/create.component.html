@@ -1,34 +1,36 @@
-<mat-form-field appearance="outline">
-  <mat-label>Usuario</mat-label>
-  <input matInput placeholder="Nombre"[(ngModel)]="user.user_name">
-</mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Usuario</mat-label>
+    <input matInput placeholder="Nombre"[(ngModel)]="user.user_name">
+  </mat-form-field>
 
-<mat-form-field appearance="outline">
-  <mat-label>Contraseña</mat-label>
-  <input matInput placeholder="Contraseña"[(ngModel)]="user.pass_user">
-</mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Contraseña</mat-label>
+    <input matInput placeholder="Contraseña"[(ngModel)]="user.pass_user">
+  </mat-form-field>
 
-<mat-form-field appearance="outline">
-  <mat-label>Email</mat-label>
-  <input matInput placeholder="Correo Electronico"[(ngModel)]="user.email_user">
-</mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Correo Electronico"[(ngModel)]="user.email_user">
+  </mat-form-field>
 
-<mat-form-field appearance="outline">
-  <mat-label>Nombre</mat-label>
-  <input matInput placeholder="Nombre" [(ngModel)]="user.name_user">
-</mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input matInput placeholder="Nombre" [(ngModel)]="user.name_user">
+  </mat-form-field>
 
 
-<mat-form-field appearance="outline">
-  <mat-label>Apellido</mat-label>
-  <input matInput placeholder="Apellido" [(ngModel)]="user.lastname_user">
-</mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Apellido</mat-label>
+    <input matInput placeholder="Apellido" [(ngModel)]="user.lastname_user">
+  </mat-form-field>
 
-<mat-form-field appearance="outline">
-  <mat-label>Rol</mat-label>
-  <input matInput placeholder="Rol" [(ngModel)]="user.role_user">
-</mat-form-field>
-
+  <mat-form-field appearance="outline">
+    <mat-label>Rol</mat-label>
+    <mat-select placeholder="Rol"  [(ngModel)]="user.role_user">
+      <mat-option value="admin">Admin</mat-option>
+      <mat-option value="viewer">Viewer</mat-option>
+    </mat-select>
+  </mat-form-field>
 
 <button class="btn btn-outline-success" style="border: 15px; margin: 10px; padding: 10px"(click)="guardar()" >Guardar</button>
 <button class="btn btn-outline-danger" style="border: 15px; margin: 10px; padding: 10px" (click)="cancelar()">Cancelar</button>

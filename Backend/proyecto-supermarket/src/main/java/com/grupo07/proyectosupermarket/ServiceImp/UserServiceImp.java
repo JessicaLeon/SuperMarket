@@ -34,7 +34,9 @@ public class UserServiceImp implements InterfaceUserSer {
 
     @Override
     public User actualizar(User u) {
-
+        BCryptPasswordEncoder encoder = new  BCryptPasswordEncoder();
+        String encodeado = encoder.encode( u.getPass_user() ) ;
+        u.setPass_user( encodeado);
         return repository.save(u);
     }
 
