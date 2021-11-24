@@ -10,12 +10,7 @@ export class Product{
    unit_price: number;
 
     constructor(
-    public id_p: number,
-    public name_p: string,
-    public category_p: Category,
-    public description_p: string,
-    public quantify_p: number,
-    public unit_price_p: number
+    
 
     ) {}
 }

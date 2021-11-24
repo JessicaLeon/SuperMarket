@@ -6,7 +6,7 @@
   </mat-form-field>
 
   <mat-form-field appearance="fill" style="width: 100%;">
-    <mat-label *ngIf="product.category">{{product.category.name_category}}</mat-label>
+    <mat-label>{{product.category.name_category}}</mat-label>
     <mat-select matInput placeholder="seleccione una categoria" [(ngModel)]="product.category">
       <mat-option *ngFor="let c of category" [value]="c">
         {{c.name_category}}

@@ -1,0 +1,7 @@
+<mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Nombre</mat-label>
+    <input matInput placeholder="Nombre"[(ngModel)]="category.name_category">
+  </mat-form-field>
+
+<button mat-raised-button color="primary" (click)="create_cat()" style="margin-left: 130px;">Guardar</button>
+<button mat-raised-button color="warn" (click)="cancelar()" style="margin-left:10px;">Cancelar</button>
