@@ -10,6 +10,9 @@ import { Category } from 'src/app/Models/category';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { AddComponent } from '../add/add.component';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/Service/login.service';
+
 
 @Component({
   selector: 'app-list',
@@ -18,6 +21,7 @@ import { AddComponent } from '../add/add.component';
 })
 export class ListComponent implements OnInit {
 
+  loggeduser : any ;
   product: Product[];
   displayedColumns = ['id_producto', 'name', 'category', 'description', 'quantify', 'unit_price', 'edit-delete'];
   dataSource: MatTableDataSource<Product>
@@ -27,24 +31,29 @@ export class ListComponent implements OnInit {
   constructor(
     private dialog:MatDialog,
     private productService: ProductService,
-    private excelService: ExcelService){}
-  
+    private excelService: ExcelService,
+    private router: Router,
+    private loginService :LoginService
+  ){}
 
-  ngOnInit(): void {  
+
+  ngOnInit(): void {
+    this.loggeduser = this.loginService.getLoggedUser();
+    if( this.loggeduser === undefined ){
+      this.router.navigate(['login']);
+    }
+
     this.update();
     this.list();
-
-
-
   }
 
   private update(){
     this.productService.updateProduct.subscribe(data =>{
-      this.dataSource = new MatTableDataSource(data); 
+      this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     })
-      
+
   }
 
   private list(){
@@ -89,6 +98,6 @@ export class ListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  
+
 
 }

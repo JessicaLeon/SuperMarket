@@ -5,6 +5,9 @@ import { DeleteComponent } from '../Delete/delete.component';
 import { EditUserComponent } from '../Edit/edit.component';
 import { CreateComponent } from '../Create/create.component';
 import { Users } from 'src/app/Models/users';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/Service/login.service';
+
 
 @Component({
   selector: 'app-list',
@@ -14,13 +17,23 @@ import { Users } from 'src/app/Models/users';
 export class ListUserComponent implements OnInit {
 
   users: Users[];
+  loggeduser : any ;
 
   constructor(
     private dialog:MatDialog,
-    private usersService: UsersService){}
-  
+    private usersService: UsersService,
+    private router: Router,
+    private loginService :LoginService
+
+  ){}
+
 
   ngOnInit(): void {
+    this.loggeduser = this.loginService.getLoggedUser();
+    if( this.loggeduser === undefined ){
+      this.router.navigate(['login']);
+    }
+
     this.usersService.updateUsers.subscribe(data =>{
       this.users = data });
     this.list();

@@ -9,6 +9,8 @@ import { EditCategoryComponent } from 'src/app/edit-category/edit-category.compo
 import { MatPaginator } from '@angular/material/paginator';
 import { AddCategoryComponent } from '../add-category/add-category.component';
 import { MatSort } from '@angular/material/sort';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/Service/login.service';
 
 @Component({
   selector: 'app-list-category',
@@ -17,22 +19,29 @@ import { MatSort } from '@angular/material/sort';
 })
 export class ListCategoryComponent implements OnInit {
 
+  loggeduser : any ;
   category: Category[];
   displayedColumns = ['id_category', 'name_category', 'edit-delete'];
   dataSource: MatTableDataSource<Category>
   @ViewChild(MatPaginator)paginator: MatPaginator;
- 
+
 
   constructor(private categoryService: CategoryService,
     private dialog:MatDialog,
-    
-    ) { }
+    private router: Router,
+    private loginService :LoginService
+  ) { }
 
   ngOnInit(): void {
-    this.categoryService.updateCategory.subscribe(data => {
-      this.dataSource = new MatTableDataSource(data);
-      this.dataSource.paginator = this.paginator;
-     
+     this.loggeduser = this.loginService.getLoggedUser();
+     if( this.loggeduser === undefined ){
+       this.router.navigate(['login']);
+     }
+
+     this.categoryService.updateCategory.subscribe(data => {
+     this.dataSource = new MatTableDataSource(data);
+     this.dataSource.paginator = this.paginator;
+
     })
     this.list();
   }
@@ -41,7 +50,7 @@ export class ListCategoryComponent implements OnInit {
     this.categoryService.list().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
-      
+
   });
 }
 
@@ -81,4 +90,3 @@ filter(event: Event){
 
 
 }
-
