@@ -24,27 +24,20 @@ export class EditCategoryComponent implements OnInit {
   }
 
   edit(): void{
-    this.category = new Category(0, "");
+    this.category = new Category();
     this.category.id_category=this.data.id_category;
     this.category.name_category=this.data.name_category;
   }
 
   guardar_cat(){
-    if(this.category != null && this.category.id_category >0){
-      this.categoryService.edit(this.category).subscribe(() => {
-        return this.categoryService.list().subscribe(data=>{
-          this.categoryService.updateCategory.next(data);
-        })
-      })
-    } else {
       this.categoryService.add(this.category).subscribe(()=>{
-        this.categoryService.list().subscribe(data =>{
+        return this.categoryService.list().subscribe(data =>{
           this.categoryService.updateCategory.next(data);
         })
       })
-    }
     this.cancelar();
   }
+
 
   cancelar(){
     this.dialogRef.close();

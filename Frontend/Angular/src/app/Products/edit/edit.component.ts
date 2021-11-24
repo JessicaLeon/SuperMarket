@@ -30,7 +30,7 @@ export class EditComponent implements OnInit {
   }
 
   edit():void{
-    this.product = new Product(0, "", new Category(0, ""), "", 0, 0);
+    this.product = new Product();
     this.product.id_producto=this.data.id_producto;
     this.product.name=this.data.name;
     this.product.category=this.data.category;

@@ -18,9 +18,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class AddComponent implements OnInit {
   
 
-  product:Product = new Product(0, "", new Category(0, ""), "", 0, 0);
+  product: Product;
   category: Category[];
-  
 
 
   constructor(
@@ -31,6 +30,7 @@ export class AddComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.product = new Product();
     this.categoryService.list().subscribe(data => {
       this.category=data;
     });
@@ -47,6 +47,7 @@ export class AddComponent implements OnInit {
     })
     this.cancelar();
   }
+
 
   cancelar(){
     this.dialogRef.close();

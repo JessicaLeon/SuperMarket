@@ -7,6 +7,8 @@ import { DeleteCategoryComponent } from '../delete-category/delete-category.comp
 import { MatDialog } from '@angular/material/dialog';
 import { EditCategoryComponent } from 'src/app/edit-category/edit-category.component';
 import { MatPaginator } from '@angular/material/paginator';
+import { AddCategoryComponent } from '../add-category/add-category.component';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-list-category',
@@ -19,6 +21,7 @@ export class ListCategoryComponent implements OnInit {
   displayedColumns = ['id_category', 'name_category', 'edit-delete'];
   dataSource: MatTableDataSource<Category>
   @ViewChild(MatPaginator)paginator: MatPaginator;
+ 
 
   constructor(private categoryService: CategoryService,
     private dialog:MatDialog,
@@ -29,6 +32,7 @@ export class ListCategoryComponent implements OnInit {
     this.categoryService.updateCategory.subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
+     
     })
     this.list();
   }
@@ -37,6 +41,7 @@ export class ListCategoryComponent implements OnInit {
     this.categoryService.list().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
+      
   });
 }
 
@@ -55,13 +60,18 @@ open_dialog_delete_cat(id: number){
   })
 }
 
-open_edit_cat(category?: Category){
-  category != null ? category: new Category(0, "");
+open_edit_cat(category: Category){
   this.dialog.open(EditCategoryComponent, {
    width: '360px',
    data: category
   })
 
+}
+
+open_add(){
+  this.dialog.open(AddCategoryComponent, {
+    width: '360px'
+  })
 }
 
 filter(event: Event){

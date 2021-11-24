@@ -37,6 +37,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import { DeleteCategoryComponent } from './Category/delete-category/delete-category.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { AddCategoryComponent } from './Category/add-category/add-category.component';
 
 
 
@@ -47,17 +48,17 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     ListComponent,
     EditComponent,
     DeleteComponent,
-
     AddComponent,
     EditUserComponent,
     CreateComponent,
-    LoginComponent,
     HomeComponent,
     NavbarComponent,
     ListUserComponent,
     ListCategoryComponent,
     DeleteCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    LoginComponent,
+    AddCategoryComponent,
     
 
   ],

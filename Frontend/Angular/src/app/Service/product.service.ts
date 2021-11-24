@@ -28,13 +28,11 @@ export class ProductService {
     return this.http.put(this.url, product);
   }
 
-  add(product: Product):Observable<Product>{
-    return this.http.post<Product>(this.url, product);
+  add(product: Product){
+    return this.http.post(this.url, product);
   }
 
-  update(product:Product):Observable<Product>{
-    return this.http.put<Product>(this.url, product);
-  }
+  
 
  
   
