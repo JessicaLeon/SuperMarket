@@ -1,58 +1,94 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-   
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
 
- 
-<div class="body" style="flex: auto; width: 100%;">
-    <app-navbar></app-navbar> 
-    <button href="" class="btn_addUser btn btn-primary btn-lg"  (click)="open_create()" >Agregar usuario</button>
-    <title>SuperMarket</title>
-    <div class="container" style="margin-top: 30px;">
-        <div class="card">
-            <div class="card-header">
-                <h3>Lista de Usuarios</h3>
-            </div>
-            <div class="card-body">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>USERNAME</th>
-                            <th>EMAIL</th>
-                            <th>NOMBRE</th>
-                            <th>APELLIDO</th>
-                            <th>ROL</th>
-                            <th>FECHA DE CREACION</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let u of users" class="text-center">
-                            <td>{{u.id_user}}</td>
-                            <td>{{u.user_name}}</td>
-                            <td>{{u.email_user}}</td>
-                            <td>{{u.name_user}}</td>
-                            <td>{{u.lastname_user}}</td>
-                            <td>{{u.role_user}}</td>
-                            <td>{{u.date_user}}</td>
-                            <td>
-                                <button  class="btn btn-outline-primary" style="border: 15px" (click)="open_edit(u)">Editar</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-outline-danger" style="border: 15px" (click)="open_dialog_delete(u.id_user)">Eliminar</button>
-                            </td>    
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+<div class="body">
+
+    <app-navbar></app-navbar>
+  
+      <div style="flex: auto; width: 100%;">
+  
+        <mat-card style="margin-top: 90px; opacity: 0.5; background-color: transparent; text-align: center; font-size: 40px;">USUARIOS</mat-card>
+        
+        <div style="display: flex; justify-content: end; margin-right: 15px; margin-top: 20px;">
+
+        
+        <div style="margin: 15px; display: flex;">
+        <button mat-raised-button color="primary" style= "margin-left: 15px;" (click)="open_create()" >Agregar Usuario</button>
+      </div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> 
-</div>
+        
+  
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"  matSort style="opacity: 0.5; justify-content: center; align-items: center;">
 
+          
+          <!-- Position Column -->
+          <ng-container matColumnDef="id_user">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header > ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id_user}} </td>
+          </ng-container>
+        
+          <!-- Name Column -->
+          <ng-container matColumnDef="user_name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> USERNAME </th>
+            <td mat-cell *matCellDef="let element"> {{element.user_name}} </td>
+          </ng-container>
+        
+          <!-- Weight Column -->
+          <ng-container matColumnDef="email_user">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> EMAIL </th>
+            <td mat-cell *matCellDef="let element"> {{element.email_user}} </td>
+          </ng-container>
+        
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="name_user">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header > NOMBRE </th>
+            <td mat-cell *matCellDef="let element"> {{element.name_user}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="lastname_user">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> APELLIDO </th>
+              <td mat-cell *matCellDef="let element"> {{element.lastname_user}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="role_user">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ROL </th>
+              <td mat-cell *matCellDef="let element"> {{element.role_user}} </td>
+            </ng-container>
 
-</html>
+            <ng-container matColumnDef="date_user">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> FECHA DE CREACION </th>
+                <td mat-cell *matCellDef="let element"> {{element.date_user}} </td>
+              </ng-container>
+  
+            <ng-container matColumnDef="edit-delete">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let row">
+                  <button mat-icon-button color="primary" (click)="open_edit(row)" aria-label="Example icon button with a home icon">
+                      <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" (click)="open_dialog_delete(row.id_user)" aria-label="Example icon button with a home icon">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+              </td>
+            </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+         
+        </table>
+        <!-- <mat-paginator [length]="100"
+                [pageSize]="5"
+                [pageSizeOptions]="[5, 10, 25, 100]"
+                aria-label="Select page"
+                style="opacity: 0.5; background-color: transparent;">
+        </mat-paginator> -->
+        
+  
+        
+      </div>
+  
+    
+  </div>
+  
+  
+  
+  
+  <

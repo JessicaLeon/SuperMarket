@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { AbstractType, Component, OnInit, ViewChild } from '@angular/core';
 import { UsersService } from 'src/app/Service/users.service';
+import { Users } from 'src/app/Models/users';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteComponent } from '../Delete/delete.component';
 import { EditUserComponent } from '../Edit/edit.component';
 import { CreateComponent } from '../Create/create.component';
-import { Users } from 'src/app/Models/users';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-list',
@@ -14,6 +16,9 @@ import { Users } from 'src/app/Models/users';
 export class ListUserComponent implements OnInit {
 
   users: Users[];
+  displayedColumns = ['id_user', 'user_name', 'email_user', 'name_user', 'lastname_user', 'role_user', 'date_user', 'edit-delete'];
+  dataSource: MatTableDataSource<Users>
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(
     private dialog:MatDialog,
@@ -21,15 +26,24 @@ export class ListUserComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.usersService.updateUsers.subscribe(data =>{
-      this.users = data });
+    this.update();
     this.list();
 
 
   }
 
+  private update(){
+    this.usersService.updateUsers.subscribe(data =>{
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.sort = this.sort;
+    })
+  }
+
   private list(){
-    this.usersService.list().subscribe(data => {this.users = data});
+    this.usersService.list().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.sort = this.sort;
+    });
   }
 
   open_dialog_delete(id: number){
@@ -41,6 +55,7 @@ export class ListUserComponent implements OnInit {
         this.usersService.delete(id).subscribe(()=>{
           this.usersService.list().subscribe(data =>{
             this.users = data;
+            this.dataSource = new MatTableDataSource(data);
           })
         })
       }
