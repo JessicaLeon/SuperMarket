@@ -1,3 +1,4 @@
+
 .body {
     display:flex;
     margin: 0 auto;
@@ -5,5 +6,4 @@
     height: 130%;
     position: relative;
     background-image: linear-gradient(to right top, #c7daf6, #a1c0f1, #7da5eb, #588ae4, #2d6fdb);
-
 }
