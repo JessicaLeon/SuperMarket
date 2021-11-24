@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="29ecc7ef-709f-40cc-802d-6a49297caaff" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Controller/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Controller/CategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Controller/ProductoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Controller/ProductoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Model/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Model/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Model/Producto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Model/Producto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/ProyectoSupermarketApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/ProyectoSupermarketApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Repository/InterfaceCategoryRep.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Repository/InterfaceCategoryRep.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Repository/InterfaceProductoRep.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Repository/InterfaceProductoRep.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Service/InterfaceCategorySer.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Service/InterfaceCategorySer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Service/InterfaceProductoSer.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Service/InterfaceProductoSer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/ServiceImp/CategoryServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/ServiceImp/CategoryServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/ServiceImp/ProductoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/ServiceImp/ProductoServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Util/UtilCors.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/classes/com/grupo07/proyectosupermarket/Util/UtilCors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/test-classes/com/grupo07/proyectosupermarket/ProyectoSupermarketApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/proyecto-supermarket/target/test-classes/com/grupo07/proyectosupermarket/ProyectoSupermarketApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Angular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Angular/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Angular/src/app/Users/List/list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Angular/src/app/Users/List/list.component.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="21Noyz0Rv1VqVee4MT1pfH2F9Zo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="29ecc7ef-709f-40cc-802d-6a49297caaff" name="Changes" comment="" />
+      <created>1637791165253</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637791165253</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="privilegios" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
