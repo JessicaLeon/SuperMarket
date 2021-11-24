@@ -2,17 +2,24 @@
 <div class="toolbar">
 <p>
   <mat-toolbar style="position: absolute; top: 0; width: 100%; display: flex; opacity: 0.5;">
-    
+
     <button mat-icon-button type="button" (click)="drawer.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
-    
+
     <span>Super Market</span>
     <span class="example-spacer"></span>
-    <h1>Salir</h1>
-    
-    
-    <button style="color: black; padding: 0;" class="btn btn-link" routerLink="/login">
+    <h1 *ngIf="loggeduser"  > {{loggeduser.name_user}} - </h1>
+    <h1 *ngIf="loggeduser===undefined"  >Login</h1>
+    <h1 *ngIf="loggeduser" >Salir</h1>    
+    <button  *ngIf="loggeduser"  style="color: black; padding: 0;" class="btn btn-link" (click)="logout()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+        <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+      </svg>
+    </button>
+
+    <button *ngIf="loggeduser===undefined"  style="color: black; padding: 0;" class="btn btn-link" routerLink="/login">
       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
         <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
@@ -24,49 +31,42 @@
 
 <div class="sidenav">
 <mat-drawer-container class="example-container" autosize>
-  
-  <mat-drawer #drawer class="example-sidenav" mode="side" style="text-align: center;">
+
+  <mat-drawer #drawer class="example-sidenav" mode="side" style="text-align: center;"  >
     <h1 style="text-align: center;">Menu</h1>
-    
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16" *ngIf="loggeduser&&loggeduser.role_user=='Admin'">
         <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
         <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
         <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
       </svg>
-    <button style="color: black;" class="btn btn-light" routerLink="/usuarios">
+    <button style="color: black;" class="btn btn-light" routerLink="/usuarios" *ngIf="loggeduser&&loggeduser.role_user=='Admin'" >
       Usuarios
     </button>
 
     <div style="margin-top: 20px;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16" *ngIf="loggeduser">
       <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
     </svg>
-    <button style="color: black;" class="btn btn-light" routerLink="/productos">
+    <button style="color: black;" class="btn btn-light" routerLink="/productos" *ngIf="loggeduser" >
       Productos
     </button>
   </div>
 
   <div style="margin-top: 20px;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16" *ngIf="loggeduser">
       <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
       <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
     </svg>
-    <button style="color: black;" class="btn btn-light" routerLink="/categorias">
+    <button style="color: black;" class="btn btn-light" routerLink="/categorias" *ngIf="loggeduser">
       Categorias
     </button>
   </div>
 
 
 
-    
+
   </mat-drawer>
 </mat-drawer-container>
 
 </div>
-
-
-
-
-
-  
-
