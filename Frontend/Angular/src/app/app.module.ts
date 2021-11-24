@@ -7,6 +7,7 @@ import { EditComponent } from './Products/edit/edit.component';
 import { CreateComponent } from './Users/Create/create.component';
 import { ListUserComponent } from './Users/List/list.component';
 import { EditUserComponent } from './Users/Edit/edit.component';
+import { ResetComponent} from './NewPass/newpass.component';
 import { DeleteComponent } from './Products/delete/delete.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -58,8 +59,9 @@ import { AddCategoryComponent } from './Category/add-category/add-category.compo
     DeleteCategoryComponent,
     EditCategoryComponent,
     LoginComponent,
+    ResetComponent,
     AddCategoryComponent,
-    
+
 
   ],
   imports: [
@@ -88,14 +90,14 @@ import { AddCategoryComponent } from './Category/add-category/add-category.compo
     MatTableExporterModule,
     MatPaginatorModule,
     MatSortModule
-    
-   
+
+
 
   ],
   providers: [],
 
   bootstrap: [AppComponent],
-  
-  
+
+
 })
 export class AppModule { }
