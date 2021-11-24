@@ -7,7 +7,7 @@
       <mat-icon>menu</mat-icon>
     </button>
 
-    <span>Super Market</span>
+    <span><a style="text-decoration: none; color: black;"routerLink="/home">Super Market</a></span>
     <span class="example-spacer"></span>
     <h1 *ngIf="loggeduser"  > {{loggeduser.name_user}} - </h1>
     <h1 *ngIf="loggeduser===undefined"  >Login</h1>
@@ -35,6 +35,7 @@
   <mat-drawer #drawer class="example-sidenav" mode="side" style="text-align: center;"  >
     <h1 style="text-align: center;">Menu</h1>
 
+      
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16" *ngIf="loggeduser&&loggeduser.role_user=='Admin'">
         <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
         <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
