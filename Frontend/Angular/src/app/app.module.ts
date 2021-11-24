@@ -48,7 +48,6 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     ListComponent,
     EditComponent,
     DeleteComponent,
-
     AddComponent,
     EditUserComponent,
     CreateComponent,
@@ -56,21 +55,11 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     HomeComponent,
     NavbarComponent,
     ListUserComponent,
-<<<<<<< HEAD
     ListCategoryComponent,
     DeleteCategoryComponent,
-    EditCategoryComponent
-    
-=======
-<<<<<<< Updated upstream
-    ListCategoryComponent
-
-=======
+    EditCategoryComponent,
     ListCategoryComponent,
     ResetComponent
->>>>>>> Stashed changes
->>>>>>> 5ce05df23d7b511bfed658e5f021c8a839337b8f
-
   ],
   imports: [
     BrowserModule,

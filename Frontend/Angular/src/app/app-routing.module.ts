@@ -15,16 +15,9 @@ const routes: Routes = [
   {path: 'home', component:HomeComponent},
   {path: 'productos', component:ListComponent},
   {path: 'login', component:LoginComponent},
-  {path: 'reset', component:LoginComponent},
+  {path: 'reset', component:ResetComponent},
   {path: 'categorias', component:ListCategoryComponent},
-<<<<<<< Updated upstream
   {path: 'usuarios', component:ListUserComponent}
-
-
-=======
-  {path: 'usuarios', component:ListUserComponent},
-  {path: "reset", component: ResetComponent, pathMatch: "full" }
->>>>>>> Stashed changes
 ];
 
 @NgModule({

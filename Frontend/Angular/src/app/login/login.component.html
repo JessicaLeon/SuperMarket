@@ -14,7 +14,7 @@
           </mat-form-field>
           <br>
             <button *ngIf="!loading" type="submit" class="ancho button" mat-button [disabled]="form.invalid" style="background-color: #005074; color:white;">Ingresar</button>
-            <button (click)="reset()" class="ancho button" mat-button [disabled]="form.invalid" style="background-color: #005074; color:white;">Me olvide la clave</button>
+            <p><a (click)="reset()" role="button" >Me olvide la clave</a></p>
             <mat-spinner *ngIf="loading" class="spinner" diameter="50"></mat-spinner>
           </form>
     </div>
