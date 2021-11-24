@@ -1,6 +1,5 @@
 package com.grupo07.proyectosupermarket.Controller;
 
-import com.grupo07.proyectosupermarket.Model.Category;
 import com.grupo07.proyectosupermarket.Model.Producto;
 import com.grupo07.proyectosupermarket.Service.InterfaceProductoSer;
 import org.springframework.beans.factory.annotation.Autowired;

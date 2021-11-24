@@ -1,7 +1,6 @@
 package com.grupo07.proyectosupermarket.Service;
 
 import com.grupo07.proyectosupermarket.Model.Category;
-import com.grupo07.proyectosupermarket.Model.Producto;
 
 import java.util.List;
 

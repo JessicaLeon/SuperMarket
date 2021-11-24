@@ -14,6 +14,7 @@ const routes: Routes = [
   {path: 'home', component:HomeComponent},
   {path: 'productos', component:ListComponent},
   {path: 'login', component:LoginComponent},
+  {path: 'reset', component:LoginComponent},
   {path: 'categorias', component:ListCategoryComponent},
   {path: 'usuarios', component:ListUserComponent}
 

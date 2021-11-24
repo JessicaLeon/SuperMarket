@@ -3,6 +3,7 @@ package com.grupo07.proyectosupermarket.ServiceImp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.grupo07.proyectosupermarket.Model.User;
@@ -22,12 +23,18 @@ public class UserServiceImp implements InterfaceUserSer {
 
     @Override
     public User registrar(User u) {
+        System.out.println("enciodeando");
+        BCryptPasswordEncoder encoder = new  BCryptPasswordEncoder();
+        String encodeado = encoder.encode( u.getPass_user() ) ;
+        u.setPass_user( encodeado);
+        System.out.println(encodeado);
         return repository.save(u);
 
     }
 
     @Override
     public User actualizar(User u) {
+
         return repository.save(u);
     }
 
@@ -40,4 +47,4 @@ public class UserServiceImp implements InterfaceUserSer {
     public User ListarId(Integer id) {
         return repository.findById(id).orElse(null);
     }
-}
+} 
