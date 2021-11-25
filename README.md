@@ -45,15 +45,9 @@ La aplicación debe presentar al menos cuatro paginas:
 | Nicole Reggiardo | <a href="https://github.com/Nikitarr" target="blank">Nikitarr</a> | Nicole Reggiardo| nikireggiardo@gmail.com |
 | Wendy Hernandez | <a href="https://github.com/WenHernandez" target="blank">WenHernandez</a> | Wendy Hernandez | hwendy750@gmail.com|
 
+<br/>
 
-
-
-
-
-
-
-
-
-
+### Enlace a la aplicación online: 
+#### <a href="https://pinneapplesupermarket.s3.sa-east-1.amazonaws.com/index.html" taget="_target" >Pinneaple Supermarket App<a/>
 
 
