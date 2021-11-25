@@ -14,7 +14,7 @@
       
       <div style="margin: 15px; display: flex;">
       <button mat-raised-button color="primary" style=" margin-left: auto" (click)="exporter.exportTable('xlsx', {fileName: 'productos_SM'})"> Exportar Excel</button>
-      <button mat-raised-button color="primary" style= "margin-left: 15px;" (click)="open_add()" >Agregar producto</button>
+      <button mat-raised-button color="primary" style= "margin-left: 15px;" (click)="open_add()" *ngIf="loggeduser&&loggeduser.role_user=='Admin'" >Agregar producto</button>
     </div>
       </div>
       
@@ -58,10 +58,10 @@
           <ng-container matColumnDef="edit-delete">
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let row">
-                <button mat-icon-button color="primary" (click)="open_edit(row)" aria-label="Example icon button with a home icon">
+                <button mat-icon-button color="primary" (click)="open_edit(row)" *ngIf="loggeduser&&loggeduser.role_user=='Admin'" aria-label="Example icon button with a home icon">
                     <mat-icon>edit</mat-icon>
                   </button>
-                  <button mat-icon-button color="warn" (click)="open_dialog_delete(row.id_producto)" aria-label="Example icon button with a home icon">
+                  <button mat-icon-button color="warn" (click)="open_dialog_delete(row.id_producto)" *ngIf="loggeduser&&loggeduser.role_user=='Admin'" aria-label="Example icon button with a home icon">
                     <mat-icon>delete</mat-icon>
                   </button>
             </td>
